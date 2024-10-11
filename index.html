@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Themed Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calc-header">
+            <span class="calculator-title">Calculator</span>
+            <div class="theme-switcher">
+                <span>THEME</span>
+                <div class="theme-toggle">
+                    <input type="radio" name="theme" id="theme1" checked>
+                    <label for="theme1">1</label>
+                    <input type="radio" name="theme" id="theme2">
+                    <label for="theme2">2</label>
+                    <input type="radio" name="theme" id="theme3">
+                    <label for="theme3">3</label>
+                </div>
+            </div>
+        </div>
+
+        <input type="text" id="display" class="display" value="0" disabled>
+
+        <div class="buttons-grid">
+            <button onclick="insert('7')">7</button>
+            <button onclick="insert('8')">8</button>
+            <button onclick="insert('9')">9</button>
+            <button onclick="deleteDigit()">DEL</button>
+
+            <button onclick="insert('4')">4</button>
+            <button onclick="insert('5')">5</button>
+            <button onclick="insert('6')">6</button>
+            <button onclick="insert('+')">+</button>
+
+            <button onclick="insert('1')">1</button>
+            <button onclick="insert('2')">2</button>
+            <button onclick="insert('3')">3</button>
+            <button onclick="insert('-')">-</button>
+
+            <button onclick="insert('.')">.</button>
+            <button onclick="insert('0')">0</button>
+            <button onclick="insert('/')">/</button>
+            <button onclick="insert('*')">x</button>
+
+            <button onclick="insert('**2')">x²</button>
+            <button onclick="insert('Math.sqrt(')">√</button>
+            <button onclick="insert('%')">%</button>
+            <button onclick="clearDisplay()">RESET</button>
+
+            <button class="equals-button" onclick="calculate()">=</button>
+        </div>
+    </div>
+
+   
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+:root {
+    --bg-color: #1c1c28;
+    --btn-bg-color: #6e42a6;
+    --btn-hover-color: #a25bcc;
+    --btn-active-color: #502e7d;
+    --text-color: #ffe600;
+    --screen-color: dimgray;
+    --screen-text-color: #fff;
+    --reset-bg-color: #720b80;
+    --equal-bg-color: #00d9d9;
+}
+
+[data-theme='theme2'] {
+    --bg-color: pink;
+    --btn-bg-color: aliceblue;
+    --btn-active-color: black;
+    --text-color: black;
+    --screen-color: aliceblue;
+    --screen-text-color: #333;
+    --reset-bg-color: orange;
+    --equal-bg-color: purple;
+}
+
+[data-theme='theme3'] {
+    --bg-color: #333;
+    --btn-bg-color: #444;
+    --btn-hover-color: #666;
+    --btn-active-color: #222;
+    --text-color: #fff;
+    --screen-color: #222;
+    --screen-text-color: #fff;
+    --reset-bg-color: #f44336;
+    --equal-bg-color: #4caf50;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 90%; /* Change to percentage for responsiveness */
+    max-width: 350px; /* Maintain maximum width */
+
+        margin: 0 auto; /* Center the container */
+        display: flex; /* Flex display to align items */
+        flex-direction: column; /* Stack children vertically */
+        justify-content: flex-start; /* Start stacking from the top */
+        border: 5px solid yellow; /* Yellow border */
+        border-radius: 15px; /* Rounded corners */
+        padding: 20px; /* Padding inside the border */
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    }
+    
+
+.calc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.calc-title {
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.theme-switcher {
+    display: flex;
+    align-items: center;
+}
+
+.theme-toggle input {
+    display: none;
+}
+
+.theme-toggle label {
+    margin-left: 5px;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.display {
+    width: 95%;
+    height: 70px;
+    background-color: var(--screen-color);
+    color: var(--screen-text-color);
+    font-size: 36px;
+    text-align: right;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+}
+
+button {
+    background-color: var(--btn-bg-color);
+    color: var(--text-color);
+    border: none;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--btn-hover-color);
+}
+
+button:active {
+    background-color: var(--btn-active-color);
+}
+
+.equals-button {
+    grid-column: span 2;
+    background-color: var(--equal-bg-color);
+    color: white;
+    width: 235%; /* Make it take full width in grid */
+}
+
+.reset-button {
+    background-color: var(--reset-bg-color);
+    color: white;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+    .display {
+        font-size: 28px; /* Adjust font size for smaller screens */
+    }
+
+    button {
+        font-size: 16px; /* Smaller font size for buttons */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .buttons-grid {
+        grid-template-columns: repeat(3, 1fr); /* Adjust grid for smaller screens */
+    }
+
+    .equals-button {
+        grid-column: span 3; /* Adjust equal button for smaller screens */
+    }
+}
+
+@media (max-width: 400px) {
+    .calc-title {
+        font-size: 20px; /* Smaller title font size */
+    }
+
+    .display {
+        font-size: 24px; /* Further decrease for very small screens */
+    }
+
+    button {
+        padding: 10px; /* Adjust padding for very small screens */
+    }
+}
+
